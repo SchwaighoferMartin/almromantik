@@ -29,7 +29,7 @@
       <a href="../ueber-uns/">Über uns</a>
     </nav>
     <div class="lang" aria-label="Sprache"><a href="#" aria-current="true" lang="de">DE</a><a href="#" lang="en">EN</a><a href="#" lang="cs">CS</a></div>
-    <a class="btn btn-book" href="../buchen/">Jetzt buchen</a>
+    <a class="btn btn-book js-book" href="../buchen/">Jetzt buchen</a>
   </div>
 </header>
 
@@ -60,35 +60,12 @@
   <img src="../img/siegel/best-of-uab-2025.webp" alt="Best of Urlaub am Bauernhof 2025, 5 von 5" width="400" height="400" loading="lazy">
   <p>Geprüfter Urlaub-am-Bauernhof-Betrieb mit 4 Blumen. 2024 und 2025 mit 5 von 5 Punkten ausgezeichnet.</p>
 </div></section>
-  <section style="padding-top:0"><div class="sec-head"><h2>Häufige Fragen</h2></div><div class="faq"><details><summary>Sind Hunde erlaubt?</summary><p>Ja, am Schmiedsipplhof sind Hunde willkommen. Bitte gib bei der Anfrage Bescheid, damit wir planen können.</p></details><details><summary>Ist die Sauna im Preis dabei?</summary><p>Ja. Die Zirbensauna mit Kneippbecken ist für unsere Gäste ohne Aufpreis nutzbar.</p></details><details><summary>Können wir bei den Tieren mithelfen?</summary><p>Gerne. Beim Füttern oder im Garten kannst du mithelfen oder einfach zuschauen. Ganz freiwillig.</p></details><details><summary>Wie weit ist es zum Skilift?</summary><p>Zum Hornspitzlift der Skiregion Dachstein West gehst du 7 bis 10 Minuten. Die Langlaufloipe beginnt direkt vor der Hoftür.</p></details><details><summary>Was kommt zum Preis dazu?</summary><p>Die Nächtigungsabgabe der Gemeinde Gosau und gegebenenfalls die Endreinigung. Den genauen Preis bekommst du mit unserem Angebot.</p></details></div></section>
-  <section style="padding-top:0">
-<form class="form js-form" action="../anfrage.php" method="post" novalidate>
-  <h2 style="font-size:1.5rem">Unverbindlich anfragen · Schmiedsipplhof</h2>
-  <input type="hidden" name="welt" value="Schmiedsipplhof">
-  <div class="row2">
-    <div class="field"><label for="f-vn">Vorname</label><input id="f-vn" name="vorname" autocomplete="given-name" required><span class="err"></span></div>
-    <div class="field"><label for="f-nn">Nachname</label><input id="f-nn" name="nachname" autocomplete="family-name" required><span class="err"></span></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
-    <div class="field"><label for="f-tel">Telefon <small>(freiwillig)</small></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"><span class="err"></span></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="f-erw">Erwachsene</label><select id="f-erw" name="erwachsene" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option></select></div>
-    <div class="field"><label for="f-kin">Kinder</label><select id="f-kin" name="kinder" required><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option></select></div>
-  </div>
-  <div class="field js-kidages" hidden><label for="f-alter">Alter der Kinder</label><input id="f-alter" name="kinderalter" placeholder="z. B. 4, 7, 12"><span class="err"></span></div>
-  <div class="row2">
-    <div class="field"><label for="f-an">Anreise</label><input id="f-an" name="anreise" type="date" required><span class="err"></span></div>
-    <div class="field"><label for="f-ab">Abreise</label><input id="f-ab" name="abreise" type="date" required><span class="err"></span></div>
-  </div>
-  <div class="field"><label for="f-wunsch">Deine Urlaubswünsche <small>(freiwillig)</small></label><textarea id="f-wunsch" name="wuensche"></textarea></div>
-  <div class="hp" aria-hidden="true"><label for="f-web">Bitte leer lassen</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
-  <label class="check"><input type="checkbox" name="datenschutz" value="ja" required><span>Ich habe die <a href="../datenschutz/">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu.</span></label>
-  <span class="err js-dserr" style="color:#b3261e;font-size:.85rem"></span>
-  <button class="btn btn-book" type="submit">Anfrage senden</button>
-  <div class="form-msg" role="status" hidden></div>
-</form></section>
+  <section style="padding-top:0"><div class="sec-head"><h2>Häufige Fragen</h2></div><div class="faq"><details><summary>Sind Hunde erlaubt?</summary><p>Ja, am Schmiedsipplhof sind Hunde willkommen. Gib bei der Buchung einfach an, dass ein Hund mitkommt.</p></details><details><summary>Ist die Sauna im Preis dabei?</summary><p>Ja. Die Zirbensauna mit Kneippbecken ist für unsere Gäste ohne Aufpreis nutzbar.</p></details><details><summary>Können wir bei den Tieren mithelfen?</summary><p>Gerne. Beim Füttern oder im Garten kannst du mithelfen oder einfach zuschauen. Ganz freiwillig.</p></details><details><summary>Wie weit ist es zum Skilift?</summary><p>Zum Hornspitzlift der Skiregion Dachstein West gehst du 7 bis 10 Minuten. Die Langlaufloipe beginnt direkt vor der Hoftür.</p></details><details><summary>Was kommt zum Preis dazu?</summary><p>Die Nächtigungsabgabe der Gemeinde Gosau und gegebenenfalls die Endreinigung. Den genauen Gesamtpreis siehst du bei der Online-Buchung, bevor du fix buchst.</p></details></div></section>
+  <section style="padding-top:0"><div class="contact-card book-box"><h2 style="font-size:1.5rem">Schmiedsipplhof online buchen</h2>
+  <p>Freie Termine sehen, Preis berechnen und sofort fix buchen. Ohne Anfrage, ohne Warten.</p>
+  <p><a class="btn btn-book js-book" href="../buchen/">Jetzt online buchen</a></p>
+  <p class="js-book-pending note" style="font-size:.92rem">Unsere Online-Buchung wird gerade eingerichtet. Bis dahin buchst du telefonisch oder per E-Mail.</p>
+  <p>Fragen? Tel. +43 664 11 44 926<br>info@almromantik.at</p></div></section>
 </div></main>
 <footer class="site">
   <div class="wrap">
@@ -101,7 +78,7 @@
     <div><h4>Rechtliches</h4><p><a href="../impressum/">Impressum</a><br><a href="../datenschutz/">Datenschutz</a><br><button type="button" class="linkbtn js-cookie-settings">Cookie-Einstellungen</button></p></div>
   </div>
 </footer>
-<div class="mobile-book"><a class="btn btn-book" href="../buchen/">Jetzt buchen</a></div>
+<div class="mobile-book"><a class="btn btn-book js-book" href="../buchen/">Jetzt buchen</a></div>
 <script src="../assets/main.js"></script>
 </body>
 </html>

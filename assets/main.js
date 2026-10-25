@@ -43,34 +43,9 @@ if (data) {
   if (c === "allow") loadGA(); else if (c !== "deny") banner();
 })();
 
-// ---- Anfrageformular ----
-document.querySelectorAll(".js-form").forEach(form => {
-  const $ = n => form.querySelector(`[name="${n}"]`);
-  const kids = $("kinder"), ages = form.querySelector(".js-kidages"), an = $("anreise"), ab = $("abreise");
-  const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
-  const iso = today.toISOString().slice(0,10); an.min = iso; ab.min = iso;
-  const toggleAges = () => { ages.hidden = +kids.value === 0; ages.querySelector("input").required = +kids.value > 0; };
-  kids.addEventListener("change", toggleAges); toggleAges();
-  an.addEventListener("change", () => { if (an.value) { const d = new Date(an.value); d.setDate(d.getDate()+1); ab.min = d.toISOString().slice(0,10); } });
-  const msg = form.querySelector(".form-msg");
-  const setErr = (el, t) => { const e = el.closest(".field")?.querySelector(".err"); if (e) e.textContent = t; el.setAttribute("aria-invalid", t ? "true" : "false"); };
-  form.addEventListener("submit", async e => {
-    e.preventDefault(); let ok = true;
-    [["vorname","Bitte gib deinen Vornamen ein."],["nachname","Bitte gib deinen Nachnamen ein."]].forEach(([n,t]) => { const v = $(n).value.trim(); setErr($(n), v ? "" : t); if (!v) ok = false; });
-    const mail = $("email"); const mOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value.trim()); setErr(mail, mOk ? "" : "Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.at."); if (!mOk) ok = false;
-    if (+kids.value > 0) { const a = $("kinderalter"); const v = a.value.trim(); setErr(a, v ? "" : "Bitte gib das Alter der Kinder an."); if (!v) ok = false; }
-    const aOk = an.value && an.value >= iso; setErr(an, aOk ? "" : "Bitte wähle ein Anreisedatum ab heute."); if (!aOk) ok = false;
-    const bOk = ab.value && an.value && ab.value > an.value; setErr(ab, bOk ? "" : "Die Abreise muss nach der Anreise liegen."); if (!bOk) ok = false;
-    const ds = form.querySelector('[name="datenschutz"]'); const dsErr = form.querySelector(".js-dserr");
-    dsErr.textContent = ds.checked ? "" : "Bitte stimm der Datenschutzerklärung zu, damit wir deine Anfrage bearbeiten können."; if (!ds.checked) ok = false;
-    if (!ok) { form.querySelector('[aria-invalid="true"], .js-dserr:not(:empty)')?.scrollIntoView({block:"center", behavior:"smooth"}); return; }
-    if (location.hostname.endsWith("github.io")) { msg.hidden = false; msg.textContent = "Testseite: Das Formular ist geprüft und funktioniert, sobald die Seite auf eurem Server liegt. Hier wird noch nichts verschickt."; return; }
-    const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; btn.textContent = "Wird gesendet …";
-    try {
-      const r = await fetch(form.action, { method: "POST", body: new FormData(form) }); const j = await r.json();
-      msg.hidden = false; msg.textContent = j.ok ? "Danke! Deine Anfrage ist bei uns angekommen. Wir melden uns so schnell wie möglich persönlich bei dir." : "Das hat leider nicht geklappt. Bitte ruf uns an oder schreib an info@almromantik.at.";
-      if (j.ok) form.reset(), toggleAges();
-    } catch (_) { msg.hidden = false; msg.textContent = "Das hat leider nicht geklappt. Bitte ruf uns an oder schreib an info@almromantik.at."; }
-    btn.disabled = false; btn.textContent = "Anfrage senden";
-  });
-});
+// ---- Buchungslink: HIER den Link der Buchungsmaschine eintragen. Leer = Buttons führen zur Seite /buchen/ ----
+const BOOKING_URL = "";
+if (BOOKING_URL) {
+  document.querySelectorAll(".js-book").forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll(".js-book-pending").forEach(e => e.hidden = true);
+} else document.querySelectorAll('.js-book[href="#"]').forEach(a => a.href = "#kontakt");

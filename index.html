@@ -29,7 +29,7 @@
       <a href="ueber-uns/">Über uns</a>
     </nav>
     <div class="lang" aria-label="Sprache"><a href="#" aria-current="true" lang="de">DE</a><a href="#" lang="en">EN</a><a href="#" lang="cs">CS</a></div>
-    <a class="btn btn-book" href="buchen/">Jetzt buchen</a>
+    <a class="btn btn-book js-book" href="buchen/">Jetzt buchen</a>
   </div>
 </header>
 
@@ -41,7 +41,7 @@
       <p class="eyebrow">Gosau am Dachstein · Salzkammergut</p>
       <h1>1 Familie, 3 Urlaubswelten <span class="script">in Gosau</span></h1>
       <p class="lead">Hofleben mit Eseln und Zirbensauna, eine Almhütte für dich allein auf 1.300 m oder ein modernes Apartment mit Self-Check-in. Einzigartig, nachhaltig, echt.</p>
-      <div class="cta-row"><a class="btn btn-book" href="buchen/">Jetzt anfragen</a><a class="btn btn-ghost" href="#welten">Urlaubswelten entdecken</a></div>
+      <div class="cta-row"><a class="btn btn-book js-book" href="buchen/">Jetzt buchen</a><a class="btn btn-ghost" href="#welten">Urlaubswelten entdecken</a></div>
     </div></div>
   </section>
 
@@ -75,7 +75,7 @@
       <p><a class="btn btn-ghost" href="schmiedsipplhof/#tiere">Unsere Tiere</a></p></div>
   </div></section>
 
-  <div class="wrap" style="padding-bottom:clamp(40px,6vw,72px)"><div class="wc"><p class="date">28.–29.<small>Dezember 2026</small></p><div><h2>Damen-Skiweltcup in Gosau</h2><p>Riesentorlauf und Slalom am Hornspitz, nur ein paar Gehminuten vom Hof. Wer dabei sein will, sollte jetzt anfragen.</p></div><a class="btn" href="https://www.dachstein.at/de/skiweltcup" target="_blank" rel="noopener">Infos &amp; Tickets</a></div></div>
+  <div class="wrap" style="padding-bottom:clamp(40px,6vw,72px)"><div class="wc"><p class="date">28.–29.<small>Dezember 2026</small></p><div><h2>Damen-Skiweltcup in Gosau</h2><p>Riesentorlauf und Slalom am Hornspitz, nur ein paar Gehminuten vom Hof. Wer dabei sein will, bucht am besten jetzt.</p></div><a class="btn" href="https://www.dachstein.at/de/skiweltcup" target="_blank" rel="noopener">Infos &amp; Tickets</a></div></div>
 
   <section class="lakes"><div class="wrap">
     <div class="sec-head"><p class="eyebrow">Urlaub im Salzkammergut</p><h2>Gosausee, Zwieselalm, Hallstatt</h2><p>Von uns aus erreichst du die schönsten Ziele der Region in wenigen Minuten. Unsere Tipps für Ausflüge und Wanderungen.</p></div>
@@ -83,37 +83,12 @@
   </div></section>
 
   <section><div class="wrap contact-grid">
-    
-<form class="form js-form" action="anfrage.php" method="post" novalidate>
-  <h2 style="font-size:1.5rem">Unverbindlich anfragen</h2>
-  
-    <div class="field"><label for="f-welt">Urlaubswelt</label><select id="f-welt" name="welt">
-      <option>Schmiedsipplhof</option><option>Hüttenurlaub</option><option>Apartments Salzkammergut</option><option selected>Noch unentschlossen</option></select></div>
-  <div class="row2">
-    <div class="field"><label for="f-vn">Vorname</label><input id="f-vn" name="vorname" autocomplete="given-name" required><span class="err"></span></div>
-    <div class="field"><label for="f-nn">Nachname</label><input id="f-nn" name="nachname" autocomplete="family-name" required><span class="err"></span></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
-    <div class="field"><label for="f-tel">Telefon <small>(freiwillig)</small></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"><span class="err"></span></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="f-erw">Erwachsene</label><select id="f-erw" name="erwachsene" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option></select></div>
-    <div class="field"><label for="f-kin">Kinder</label><select id="f-kin" name="kinder" required><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option></select></div>
-  </div>
-  <div class="field js-kidages" hidden><label for="f-alter">Alter der Kinder</label><input id="f-alter" name="kinderalter" placeholder="z. B. 4, 7, 12"><span class="err"></span></div>
-  <div class="row2">
-    <div class="field"><label for="f-an">Anreise</label><input id="f-an" name="anreise" type="date" required><span class="err"></span></div>
-    <div class="field"><label for="f-ab">Abreise</label><input id="f-ab" name="abreise" type="date" required><span class="err"></span></div>
-  </div>
-  <div class="field"><label for="f-wunsch">Deine Urlaubswünsche <small>(freiwillig)</small></label><textarea id="f-wunsch" name="wuensche"></textarea></div>
-  <div class="hp" aria-hidden="true"><label for="f-web">Bitte leer lassen</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
-  <label class="check"><input type="checkbox" name="datenschutz" value="ja" required><span>Ich habe die <a href="datenschutz/">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu.</span></label>
-  <span class="err js-dserr" style="color:#b3261e;font-size:.85rem"></span>
-  <button class="btn btn-book" type="submit">Anfrage senden</button>
-  <div class="form-msg" role="status" hidden></div>
-</form>
-    <div class="contact-card"><h3>Heike und Martin Schwaighofer</h3><p>Ruf uns an oder schreib uns. Wir melden uns persönlich.</p><p>Tel. +43 664 11 44 926<br>info@almromantik.at</p><p>Janslweg 22, 4824 Gosau</p></div>
+    <div class="contact-card book-box"><h2 style="font-size:1.5rem">Online buchen</h2>
+  <p>Freie Termine sehen, Preis berechnen und sofort fix buchen. Ohne Anfrage, ohne Warten.</p>
+  <p><a class="btn btn-book js-book" href="buchen/">Jetzt online buchen</a></p>
+  <p class="js-book-pending note" style="font-size:.92rem">Unsere Online-Buchung wird gerade eingerichtet. Bis dahin buchst du telefonisch oder per E-Mail.</p>
+  <p>Fragen? Tel. +43 664 11 44 926<br>info@almromantik.at</p></div>
+    <div class="contact-card"><h3>Heike und Martin Schwaighofer</h3><p>Fragen vor der Buchung? Ruf uns an oder schreib uns.</p><p>Tel. +43 664 11 44 926<br>info@almromantik.at</p><p>Janslweg 22, 4824 Gosau</p></div>
   </div></section>
 </main>
 <footer class="site">
@@ -127,7 +102,7 @@
     <div><h4>Rechtliches</h4><p><a href="impressum/">Impressum</a><br><a href="datenschutz/">Datenschutz</a><br><button type="button" class="linkbtn js-cookie-settings">Cookie-Einstellungen</button></p></div>
   </div>
 </footer>
-<div class="mobile-book"><a class="btn btn-book" href="buchen/">Jetzt buchen</a></div>
+<div class="mobile-book"><a class="btn btn-book js-book" href="buchen/">Jetzt buchen</a></div>
 <script src="assets/main.js"></script>
 </body>
 </html>
