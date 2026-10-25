@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Musterbild">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9dbe6"/><stop offset="1" stop-color="#f2f5f2"/></linearGradient></defs>
+<rect width="1200" height="800" fill="url(#s)"/>
+<path d="M0 470 L180 250 L300 360 L470 140 L620 330 L760 210 L930 380 L1060 260 L1200 360 L1200 800 L0 800Z" fill="#7d8c99"/>
+<path d="M430 182 L470 140 L512 196 L488 190 L470 210 L452 194Z M720 250 L760 210 L796 248 L776 244 L760 262Z" fill="#fff" fill-opacity=".85"/>
+<path d="M0 560 L220 420 L380 500 L560 380 L760 500 L980 400 L1200 520 L1200 800 L0 800Z" fill="#4d6b36"/>
+
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle"><rect x="440" y="676" width="320" height="56" rx="28" fill="#000" fill-opacity=".45"/><text x="600" y="712" font-size="26" fill="#fff" font-weight="700" letter-spacing="2">MUSTERBILD · FOTO FOLGT</text></g>
+</svg>
