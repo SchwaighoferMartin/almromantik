@@ -380,3 +380,4 @@ h1,h2,h3{letter-spacing:-.02em}
   .hero .cta-row .btn{flex:1 1 100%;text-align:center}
 }
 .trip figcaption{left:8px;width:fit-content;margin-left:auto;font-size:.68rem;line-height:1.3;background:rgba(0,0,0,.55);border-radius:10px;padding:3px 9px}.trip figcaption a{color:#fff}
+.top .home span{white-space:nowrap}
