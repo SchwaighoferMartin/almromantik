@@ -309,8 +309,8 @@ h1,h2,h3{letter-spacing:-.02em}
 .split .txt p{color:var(--ink-soft)}
 .animals{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width:760px){.animals{grid-template-columns:repeat(2,1fr)}}
-.animals figure{margin:0;display:grid;gap:6px}
-.animals img{border-radius:10px;aspect-ratio:1/1;object-fit:cover;width:100%}
+.animals figure{margin:0;display:grid;gap:6px;align-content:start}
+.animals img{border-radius:10px;aspect-ratio:4/3;height:auto!important;object-fit:cover;width:100%}
 .animals figcaption{font-size:.88rem;color:var(--muted)}
 .hero-alm .logo-tile{width:clamp(200px,24vw,300px)}
 /* Formular */
