@@ -1,6 +1,6 @@
 /* Schriften lokal gehostet (keine Verbindung zu Google) – Lizenz: SIL OFL, siehe fonts/OFL-*.txt */
-@font-face{font-family:"Montserrat";src:url("fonts/montserrat.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Dancing Script";src:url("fonts/dancing-script.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("fonts/montserrat.woff2") format("woff2"),url("fonts/montserrat.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Dancing Script";src:url("fonts/dancing-script.woff2") format("woff2"),url("fonts/dancing-script.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
 
 /* Layout: helle Seite, großes Ausblick-Foto, darunter die Seen-Leiste als roter Faden – jede Wohnung ist ein See */
 /* Layout: Naturtöne aus dem Logo – Dunkelgrün für den Hof, Hellgrün für die Almhütte, Braun als Holz-Akzent */
@@ -383,3 +383,11 @@ h1,h2,h3{letter-spacing:-.02em}
 .top .home span{white-space:nowrap}
 .tier-pics.n5 figure:first-child{grid-column:span 2;aspect-ratio:16/9}
 #bauernstube .sec-head .btn{margin:4px 6px 4px 0}
+/* Audit 27.10.: Kontrast + Überschriften */
+:root{--muted:#64625a}
+body.huette{--pink:#55703a;--pink-ink:#465d2f}
+h2.as-h3{font-size:1.3rem;font-weight:700;margin-bottom:6px}
+.contact-card h2.as-h3{color:var(--on-stone)}
+footer.site h2.fh{margin:0 0 8px;font:700 .8rem var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+footer.site h2.fh{color:#a9cc84}
+.lake-box .eyebrow,.lake-box .km,.lakes .eyebrow,.lake-line .km{color:#a9cc84}
