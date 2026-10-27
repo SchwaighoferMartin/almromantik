@@ -8,6 +8,10 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
 RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+# alte bzw. geplante Adressen von almromantik.at (Liste Stephi 27.10.2026)
+RewriteRule ^apartments(?:-salzkammergut)?(?:\.html)?/?$ https://www.apartments-salzkammergut.at/ [L,R=301]
+RewriteRule ^apartments-salzkammergut/(apartment-[a-z]+)(?:\.html)?/?$ https://www.apartments-salzkammergut.at/$1/ [L,R=301]
+RewriteRule ^almhuette(?:\.html)?/?$ /huettenurlaub/ [L,R=301]
 # alte Contao-Adressen (.html) auf neue Ordner-Adressen
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)\.html$ /$1/ [L,R=301]

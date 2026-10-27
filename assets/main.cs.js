@@ -54,7 +54,7 @@ if (data) {
 })();
 
 // ---- Buchungslink: HIER den Link der Buchungsmaschine eintragen. Leer = Buttons führen zur Seite /buchen/ ----
-const BOOKING_URL = "";
+const BOOKING_URL = "https://atuab4-07-06-02.officialbookings.com/";  // Seekda (Urlaub am Bauernhof), Stand 27.10.2026
 if (BOOKING_URL) {
   document.querySelectorAll(".js-book").forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
   document.querySelectorAll(".js-book-pending").forEach(e => e.hidden = true);
