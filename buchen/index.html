@@ -32,10 +32,10 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 33 L15 12 L20 19 L25 9 L37 33 Z" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/><path d="M21.6 15.5 L25 9 L28.6 16" fill="none" stroke="var(--pink)" stroke-width="2.4" stroke-linejoin="round"/></svg>
       <span>Almromantik</span>
     </a>
-    <nav class="nav" aria-label="Hauptnavigation">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptmenu" aria-label="Menü"><span></span><span></span><span></span></button>
+    <nav id="hauptmenu" class="nav" aria-label="Hauptnavigation">
       <a href="../schmiedsipplhof/">Schmiedsipplhof</a>
       <a href="../huettenurlaub/">Hüttenurlaub</a>
-      <a href="https://www.apartments-salzkammergut.at/" target="_blank" rel="noopener">Apartments</a>
       <a href="../urlaub-salzkammergut/">Urlaub im Salzkammergut</a>
       <a href="../ueber-uns/">Über uns</a>
     </nav>
@@ -46,14 +46,44 @@
 
 <main><div class="wrap">
   <p class="crumbs"><a href="../">Almromantik</a> › Jetzt buchen</p>
-  <div class="apt-hero"><p class="eyebrow">Online buchen</p><h1>Jetzt buchen</h1><p class="sub">Alle Unterkünfte buchst du direkt online: freie Termine sehen, Preis berechnen, fix buchen.</p></div>
+  <div class="apt-hero"><p class="eyebrow">Online buchen</p><h1>Ferienwohnung &amp; Almhütte in Gosau buchen</h1><p class="sub">Alle Unterkünfte buchst du direkt online: freie Termine sehen, Preis berechnen, fix buchen.</p></div>
   <div class="worlds" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <article class="world w-hof"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Schmiedsipplhof</h2><p>Ferienwohnungen Löckersee, Almheu und Hehnanest.</p></div><div class="cta-row"><a class="btn btn-book js-book" href="#">Hof buchen</a></div></article>
     <article class="world w-huette"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Hüttenurlaub</h2><p>Almhütte auf der Schmiedsipplalm, Mai bis Oktober.</p></div><div class="cta-row"><a class="btn btn-book js-book" style="background:#55703a" href="#">Almhütte buchen</a></div></article>
   </div><p style="margin-top:22px;color:var(--ink-soft)">Lieber modern und mitten im Ort? Unsere Apartments findest du auf <a href="https://www.apartments-salzkammergut.at/" target="_blank" rel="noopener">apartments-salzkammergut.at</a>.</p>
-  <p class="js-book-pending note" style="margin-bottom:30px">Unsere Online-Buchung wird gerade eingerichtet. Bis dahin buchst du telefonisch unter +43 664 11 44 926 oder per E-Mail an info@almromantik.at.</p>
+  <p class="js-book-pending note" style="margin-bottom:30px">Unsere Online-Buchung wird gerade eingerichtet. Bis dahin buchst du telefonisch unter <a href="tel:+436641144926">+43 664 11 44 926</a> oder per E-Mail an <a href="mailto:info@almromantik.at">info@almromantik.at</a>.</p>
+  <section style="padding-top:10px"><h2>Gut zu wissen vor der Buchung</h2><ul class="amen" style="grid-template-columns:1fr"><li>Online buchen: freie Termine sehen, Gesamtpreis berechnen und sofort fix buchen</li><li>30 % Anzahlung per Überweisung innerhalb von 7 Tagen nach der Buchung</li><li>Ferienwohnungen am Hof: Kaution € 300 als Vormerkung auf der Kreditkarte, nach der Abreise wieder freigegeben</li><li>Endreinigung: Löckersee € 75, Almheu € 85, Hehnanest bis € 200, Almhütte € 89 inkl. Holz, Gas und Müll</li><li>Ortstaxe € 4,00 pro Person und Nacht, Kinder bis 15 Jahre befreit</li><li>Storno nach AGBH 2006: bis 3 Monate vor Anreise kostenlos, von 3 Monaten bis 1 Monat vorher 40 %, von 1 Monat bis 1 Woche vorher 70 %, in der letzten Woche vor Anreise 90 % des Buchungswerts</li><li>Buchbar bis 1 Tag vor Anreise, die Almhütte von Mai bis Oktober mit mindestens 2 Nächten</li><li>Für Gruppen bis 25 Personen, mehrere Wohnungen zusammen oder die Bauernstube schick uns am besten eine Anfrage</li></ul></section>
+  <section style="padding-top:0">
+<form class="form js-form" id="anfrage" action="../anfrage.php" method="post" novalidate>
+  <h2 style="font-size:1.5rem">Lieber zuerst anfragen?</h2>
+  <p style="margin:0;color:var(--ink-soft)">Für Gruppen, mehrere Wohnungen zusammen, die Bauernstube oder eine Feier schreib uns einfach. Wir melden uns innerhalb weniger Stunden.</p>
+  <input type="hidden" name="welt" value="Almromantik">
+  <fieldset class="field wahl"><legend>Was möchtest du anfragen?</legend><label class="check"><input type="checkbox" name="wohnung[]" value="Löckersee"><span>Ferienwohnung Löckersee</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almheu"><span>Ferienwohnung Almheu</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Hehnanest"><span>Ferienwohnung Hehnanest</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Bauernstube"><span>Bauernstube, € 80 pro Aufenthalt</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almhütte"><span>Almhütte</span></label></fieldset>
+  <div class="row2">
+    <div class="field"><label for="f-vn">Vorname</label><input id="f-vn" name="vorname" autocomplete="given-name" required><span class="err"></span></div>
+    <div class="field"><label for="f-nn">Nachname</label><input id="f-nn" name="nachname" autocomplete="family-name" required><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
+    <div class="field"><label for="f-tel">Telefon <small>(freiwillig)</small></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-erw">Erwachsene</label><select id="f-erw" name="erwachsene" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+    <div class="field"><label for="f-kin">Kinder</label><select id="f-kin" name="kinder" required><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-an">Anreise</label><input id="f-an" name="anreise" type="date" required><span class="err"></span></div>
+    <div class="field"><label for="f-ab">Abreise</label><input id="f-ab" name="abreise" type="date" required><span class="err"></span></div>
+  </div>
+  <div class="field"><label for="f-wunsch">Deine Nachricht <small>(freiwillig)</small></label><textarea id="f-wunsch" name="wuensche"></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="f-web">Bitte leer lassen</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="datenschutz" value="ja" required><span>Ich habe die <a href="../datenschutz/">Datenschutzerklärung</a> gelesen und bin einverstanden, dass ihr meine Angaben zur Beantwortung der Anfrage verwendet.</span></label>
+  <span class="err js-dserr"></span>
+  <button class="btn btn-book" type="submit">Anfrage senden</button>
+  <div class="form-msg" role="status" hidden></div>
+</form></section>
   <div style="padding-bottom:70px;max-width:720px">
-    <div class="contact-card" id="kontakt"><h2 class="as-h3">Kontakt &amp; Lage</h2><p>Heike und Martin Schwaighofer<br>Austraße 22, 4825 Gosau<br>Lage des Hofes: Janslweg 22</p><p>Tel. +43 664 11 44 926<br>info@almromantik.at</p>
+    <div class="contact-card" id="kontakt"><h2 class="as-h3">Kontakt &amp; Lage</h2><p>Heike und Martin Schwaighofer<br>Austraße 22, 4825 Gosau<br>Lage des Hofes: Janslweg 22</p><p>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <h2 class="as-h3">Anreise</h2><p>Mit der Bahn bis Steeg-Gosau, weiter mit Bus 541 oder 542 bis Gosau Sommerhof, von dort 10 Minuten zu Fuß. Aus Richtung Abtenau mit Bus 470 bis Gosau Abzweigung Pass Gschütt und umsteigen Richtung Gosausee. Fahrpläne auf oebb.at und postbus.at.</p></div>
   </div>
 </div></main>
@@ -61,7 +91,7 @@
   <div class="wrap">
     <div>
       <h2 class="fh">Almromantik</h2>
-      <p>Urlaub am Schmiedsipplhof &amp; Hüttenurlaub<br>Heike und Martin Schwaighofer<br>Austraße 22, 4825 Gosau, Österreich<br>Hof: Janslweg 22, 4824 Gosau<br>Tel. +43 664 11 44 926<br>info@almromantik.at</p>
+      <p>Urlaub am Schmiedsipplhof &amp; Hüttenurlaub<br>Heike und Martin Schwaighofer<br>Austraße 22, 4825 Gosau, Österreich<br>Hof: Janslweg 22, 4824 Gosau<br>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <a class="sister" href="https://www.apartments-salzkammergut.at/" target="_blank" rel="noopener">Modern und kontaktlos? → apartments-salzkammergut.at</a>
     </div>
     <div><h2 class="fh">Unterkünfte</h2><p><a href="../schmiedsipplhof/">Schmiedsipplhof</a><br><a href="../schmiedsipplhof/ferienwohnung-loeckersee/">Ferienwohnung Löckersee</a><br><a href="../schmiedsipplhof/ferienwohnung-almheu/">Ferienwohnung Almheu</a><br><a href="../schmiedsipplhof/ferienwohnung-hehnanest/">Ferienwohnung Hehnanest</a><br><a href="../huettenurlaub/">Almhütte</a></p></div>

@@ -43,6 +43,16 @@ if (data) {
   if (c === "allow") loadGA(); else if (c !== "deny") banner();
 })();
 
+// Burgermenü
+(function () {
+  var top = document.querySelector("header.top"), btn = top && top.querySelector(".menu-btn");
+  if (!btn) return;
+  function set(open) { top.classList.toggle("open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+  btn.addEventListener("click", function () { set(!top.classList.contains("open")); });
+  top.querySelectorAll(".nav a").forEach(function (a) { a.addEventListener("click", function () { set(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+})();
+
 // ---- Buchungslink: HIER den Link der Buchungsmaschine eintragen. Leer = Buttons führen zur Seite /buchen/ ----
 const BOOKING_URL = "";
 if (BOOKING_URL) {
@@ -56,3 +66,34 @@ document.querySelectorAll('.tier-tabs').forEach(list => {
   const show = t => { tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; }); };
   tabs.forEach((t, i) => { t.addEventListener('click', () => show(t)); t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; show(n); n.focus(); } }); });
 });
+
+// Anfrageformular
+(function () {
+  var T = {req: "Bitte ausfüllen.", mail: "Bitte eine gültige E-Mail-Adresse eingeben.", dates: "Die Abreise muss nach der Anreise sein.",
+    ds: "Bitte stimme der Datenschutzerklärung zu.", sending: "Wird gesendet …",
+    ok: "Danke! Deine Anfrage ist bei uns angekommen. Wir melden uns innerhalb weniger Stunden.",
+    fail: "Das Senden hat leider nicht geklappt. Bitte schreib uns an info@almromantik.at oder ruf an: +43 664 11 44 926."};
+  document.querySelectorAll(".js-form").forEach(function (f) {
+    var today = new Date().toISOString().slice(0, 10);
+    f.querySelectorAll('input[type="date"]').forEach(function (d) { d.min = today; });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true, first = null;
+      function err(el, msg) { var s = el.parentNode.querySelector(".err"); if (s) s.textContent = msg || ""; if (msg) { ok = false; first = first || el; el.setAttribute("aria-invalid", "true"); } else el.removeAttribute("aria-invalid"); }
+      f.querySelectorAll("input[required]:not([type=checkbox]),select[required]").forEach(function (el) { err(el, el.value.trim() ? "" : T.req); });
+      var m = f.querySelector('[name="email"]'); if (m.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m.value)) err(m, T.mail);
+      var an = f.querySelector('[name="anreise"]'), ab = f.querySelector('[name="abreise"]');
+      if (an.value && ab.value && ab.value <= an.value) err(ab, T.dates);
+      var ds = f.querySelector('[name="datenschutz"]'), dse = f.querySelector(".js-dserr");
+      dse.textContent = ds.checked ? "" : T.ds; if (!ds.checked) { ok = false; first = first || ds; }
+      if (!ok) { first.focus(); return; }
+      var btn = f.querySelector('button[type="submit"]'), msg = f.querySelector(".form-msg");
+      btn.disabled = true; var lbl = btn.textContent; btn.textContent = T.sending;
+      fetch(f.action, {method: "POST", body: new FormData(f), headers: {"Accept": "application/json"}})
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (!j.ok) throw 0; msg.textContent = T.ok; msg.hidden = false; f.reset(); })
+        .catch(function () { msg.textContent = T.fail; msg.hidden = false; })
+        .finally(function () { btn.disabled = false; btn.textContent = lbl; msg.setAttribute("tabindex", "-1"); msg.focus(); });
+    });
+  });
+})();

@@ -32,10 +32,10 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 33 L15 12 L20 19 L25 9 L37 33 Z" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/><path d="M21.6 15.5 L25 9 L28.6 16" fill="none" stroke="var(--pink)" stroke-width="2.4" stroke-linejoin="round"/></svg>
       <span>Almromantik</span>
     </a>
-    <nav class="nav" aria-label="Main navigation">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptmenu" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav id="hauptmenu" class="nav" aria-label="Main navigation">
       <a href="../schmiedsipplhof/">Schmiedsipplhof</a>
       <a href="../huettenurlaub/">Mountain hut</a>
-      <a href="https://www.apartments-salzkammergut.at/en/" target="_blank" rel="noopener">Apartments</a>
       <a href="../urlaub-salzkammergut/">Holidays in the Salzkammergut</a>
       <a href="../ueber-uns/">About us</a>
     </nav>
@@ -46,22 +46,52 @@
 
 <main><div class="wrap">
   <p class="crumbs"><a href="../">Almromantik</a> › Book now</p>
-  <div class="apt-hero"><p class="eyebrow">Book online</p><h1>Book now</h1><p class="sub">Book all our accommodation directly online: see available dates, calculate the price, confirm.</p></div>
+  <div class="apt-hero"><p class="eyebrow">Book online</p><h1>Book a holiday apartment or mountain hut in Gosau</h1><p class="sub">Book all our accommodation directly online: see available dates, calculate the price, confirm.</p></div>
   <div class="worlds" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <article class="world w-hof"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Schmiedsipplhof</h2><p>Löckersee, Almheu and Hehnanest apartments.</p></div><div class="cta-row"><a class="btn btn-book js-book" href="#">Book the farm</a></div></article>
     <article class="world w-huette"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Mountain hut</h2><p>Mountain hut on the Schmiedsipplalm, May to October.</p></div><div class="cta-row"><a class="btn btn-book js-book" style="background:#55703a" href="#">Book the hut</a></div></article>
   </div><p style="margin-top:22px;color:var(--ink-soft)">Prefer modern and right in the village? You'll find our apartments at <a href="https://www.apartments-salzkammergut.at/en/" target="_blank" rel="noopener">apartments-salzkammergut.at</a>.</p>
-  <p class="js-book-pending note" style="margin-bottom:30px">Our online booking is being set up. Until then, please book by phone on +43 664 11 44 926 or by email to info@almromantik.at.</p>
+  <p class="js-book-pending note" style="margin-bottom:30px">Our online booking is being set up. Until then, please book by phone on <a href="tel:+436641144926">+43 664 11 44 926</a> or by email to <a href="mailto:info@almromantik.at">info@almromantik.at</a>.</p>
+  <section style="padding-top:10px"><h2>Good to know before you book</h2><ul class="amen" style="grid-template-columns:1fr"><li>Book online: see available dates, calculate the total price and book instantly</li><li>30% deposit by bank transfer within 7 days of booking</li><li>Farm apartments: € 300 security deposit pre-authorised on your credit card, released after departure</li><li>Final cleaning: Löckersee € 75, Almheu € 85, Hehnanest up to € 200, mountain hut € 89 incl. wood, gas and rubbish</li><li>Tourist tax € 4.00 per person per night, children up to 15 exempt</li><li>Cancellation under AGBH 2006: free up to 3 months before arrival, 40% from 3 months to 1 month before, 70% from 1 month to 1 week before, 90% of the booking value in the last week before arrival</li><li>Bookable up to 1 day before arrival; the mountain hut from May to October with a minimum of 2 nights</li><li>For groups of up to 25, several apartments together or the farmhouse parlour, it's best to send us an enquiry</li></ul></section>
+  <section style="padding-top:0">
+<form class="form js-form" id="anfrage" action="../../anfrage.php" method="post" novalidate>
+  <h2 style="font-size:1.5rem">Prefer to ask first?</h2>
+  <p style="margin:0;color:var(--ink-soft)">For groups, several apartments together, the farmhouse parlour or a celebration, just write to us. We'll get back to you within a few hours.</p>
+  <input type="hidden" name="welt" value="Almromantik">
+  <fieldset class="field wahl"><legend>What would you like to enquire about?</legend><label class="check"><input type="checkbox" name="wohnung[]" value="Löckersee"><span>Löckersee apartment</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almheu"><span>Almheu apartment</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Hehnanest"><span>Hehnanest apartment</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Bauernstube"><span>Farmhouse parlour, € 80 per stay</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almhütte"><span>Mountain hut</span></label></fieldset>
+  <div class="row2">
+    <div class="field"><label for="f-vn">First name</label><input id="f-vn" name="vorname" autocomplete="given-name" required><span class="err"></span></div>
+    <div class="field"><label for="f-nn">Last name</label><input id="f-nn" name="nachname" autocomplete="family-name" required><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
+    <div class="field"><label for="f-tel">Phone <small>(optional)</small></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-erw">Adults</label><select id="f-erw" name="erwachsene" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+    <div class="field"><label for="f-kin">Children</label><select id="f-kin" name="kinder" required><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-an">Arrival</label><input id="f-an" name="anreise" type="date" required><span class="err"></span></div>
+    <div class="field"><label for="f-ab">Departure</label><input id="f-ab" name="abreise" type="date" required><span class="err"></span></div>
+  </div>
+  <div class="field"><label for="f-wunsch">Your message <small>(optional)</small></label><textarea id="f-wunsch" name="wuensche"></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="f-web">Please leave empty</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="datenschutz" value="ja" required><span>I have read the <a href="../datenschutz/">Privacy policy</a> and agree that you may use my details to answer my enquiry.</span></label>
+  <span class="err js-dserr"></span>
+  <button class="btn btn-book" type="submit">Send enquiry</button>
+  <div class="form-msg" role="status" hidden></div>
+</form></section>
   <div style="padding-bottom:70px;max-width:720px">
-    <div class="contact-card" id="kontakt"><h2 class="as-h3">Contact &amp; location</h2><p>Heike and Martin Schwaighofer<br>Austraße 22, 4825 Gosau<br>Farm location: Janslweg 22</p><p>Phone +43 664 11 44 926<br>info@almromantik.at</p>
-      <h2 class="as-h3">Getting there</h2><p>Take the train to Steeg-Gosau, then bus 541 or 542 to Gosau Sommerhof and walk 10 minutes from there. From Abtenau take bus 470 to the Gosau Abzweigung Pass Gschütt stop and change towards Gosausee. Timetables at oebb.at and postbus.at.</p></div>
+    <div class="contact-card" id="kontakt"><h2 class="as-h3">Contact &amp; location</h2><p>Heike and Martin Schwaighofer<br>Austraße 22, 4825 Gosau<br>Farm location: Janslweg 22</p><p>Phone <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
+      <h2 class="as-h3">Arrival</h2><p>Take the train to Steeg-Gosau, then bus 541 or 542 to Gosau Sommerhof and walk 10 minutes from there. From Abtenau take bus 470 to the Gosau Abzweigung Pass Gschütt stop and change towards Gosausee. Timetables at oebb.at and postbus.at.</p></div>
   </div>
 </div></main>
 <footer class="site">
   <div class="wrap">
     <div>
       <h2 class="fh">Almromantik</h2>
-      <p>Holidays at the Schmiedsipplhof &amp; mountain hut<br>Heike and Martin Schwaighofer<br>Austraße 22, 4825 Gosau, Austria<br>Farm: Janslweg 22, 4824 Gosau<br>Phone +43 664 11 44 926<br>info@almromantik.at</p>
+      <p>Holidays at the Schmiedsipplhof &amp; mountain hut<br>Heike and Martin Schwaighofer<br>Austraße 22, 4825 Gosau, Austria<br>Farm: Janslweg 22, 4824 Gosau<br>Phone <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <a class="sister" href="https://www.apartments-salzkammergut.at/en/" target="_blank" rel="noopener">Modern and contact-free? → apartments-salzkammergut.at</a>
     </div>
     <div><h2 class="fh">Accommodation</h2><p><a href="../schmiedsipplhof/">Schmiedsipplhof</a><br><a href="../schmiedsipplhof/ferienwohnung-loeckersee/">Löckersee apartment</a><br><a href="../schmiedsipplhof/ferienwohnung-almheu/">Almheu apartment</a><br><a href="../schmiedsipplhof/ferienwohnung-hehnanest/">Hehnanest apartment</a><br><a href="../huettenurlaub/">Mountain hut</a></p></div>

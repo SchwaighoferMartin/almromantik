@@ -32,10 +32,10 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 33 L15 12 L20 19 L25 9 L37 33 Z" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/><path d="M21.6 15.5 L25 9 L28.6 16" fill="none" stroke="var(--pink)" stroke-width="2.4" stroke-linejoin="round"/></svg>
       <span>Almromantik</span>
     </a>
-    <nav class="nav" aria-label="Hlavní navigace">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptmenu" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav id="hauptmenu" class="nav" aria-label="Hlavní navigace">
       <a href="../schmiedsipplhof/">Schmiedsipplhof</a>
       <a href="../huettenurlaub/">Horská chata</a>
-      <a href="https://www.apartments-salzkammergut.at/cs/" target="_blank" rel="noopener">Apartmány</a>
       <a href="../urlaub-salzkammergut/">Dovolená v Solné komoře</a>
       <a href="../ueber-uns/">O nás</a>
     </nav>
@@ -46,14 +46,44 @@
 
 <main><div class="wrap">
   <p class="crumbs"><a href="../">Almromantik</a> › Rezervace</p>
-  <div class="apt-hero"><p class="eyebrow">Rezervace online</p><h1>Rezervovat</h1><p class="sub">Všechna ubytování rezervujete přímo online: volné termíny, výpočet ceny, závazná rezervace.</p></div>
+  <div class="apt-hero"><p class="eyebrow">Rezervace online</p><h1>Rezervace apartmánu a horské chaty v Gosau</h1><p class="sub">Všechna ubytování rezervujete přímo online: volné termíny, výpočet ceny, závazná rezervace.</p></div>
   <div class="worlds" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <article class="world w-hof"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Schmiedsipplhof</h2><p>Apartmány Löckersee, Almheu a Hehnanest.</p></div><div class="cta-row"><a class="btn btn-book js-book" href="#">Rezervovat farmu</a></div></article>
     <article class="world w-huette"><div class="bar"></div><div class="apt-body"><h2 class="as-h3">Horská chata</h2><p>Horská chata na pastvině Schmiedsipplalm, květen až říjen.</p></div><div class="cta-row"><a class="btn btn-book js-book" style="background:#55703a" href="#">Rezervovat chatu</a></div></article>
   </div><p style="margin-top:22px;color:var(--ink-soft)">Raději moderně a přímo v obci? Naše apartmány najdete na <a href="https://www.apartments-salzkammergut.at/cs/" target="_blank" rel="noopener">apartments-salzkammergut.at</a>.</p>
-  <p class="js-book-pending note" style="margin-bottom:30px">Online rezervaci právě zprovozňujeme. Do té doby rezervujte telefonicky na +43 664 11 44 926 nebo e-mailem na info@almromantik.at.</p>
+  <p class="js-book-pending note" style="margin-bottom:30px">Online rezervaci právě zprovozňujeme. Do té doby rezervujte telefonicky na <a href="tel:+436641144926">+43 664 11 44 926</a> nebo e-mailem na <a href="mailto:info@almromantik.at">info@almromantik.at</a>.</p>
+  <section style="padding-top:10px"><h2>Dobré vědět před rezervací</h2><ul class="amen" style="grid-template-columns:1fr"><li>Rezervace online: volné termíny, výpočet celkové ceny a okamžitá závazná rezervace</li><li>Záloha 30 % bankovním převodem do 7 dnů od rezervace</li><li>Apartmány na statku: kauce 300 € jako blokace na kreditní kartě, po odjezdu uvolněna</li><li>Závěrečný úklid: Löckersee 75 €, Almheu 85 €, Hehnanest až 200 €, horská chata 89 € vč. dřeva, plynu a odpadu</li><li>Místní poplatek 4,00 € za osobu a noc, děti do 15 let osvobozeny</li><li>Storno dle AGBH 2006: do 3 měsíců před příjezdem zdarma, od 3 měsíců do 1 měsíce předem 40 %, od 1 měsíce do 1 týdne předem 70 %, v posledním týdnu před příjezdem 90 % ceny rezervace</li><li>Rezervovat lze do 1 dne před příjezdem, horskou chatu od května do října na minimálně 2 noci</li><li>Pro skupiny do 25 osob, více apartmánů najednou nebo selskou světnici nám nejlépe pošlete poptávku</li></ul></section>
+  <section style="padding-top:0">
+<form class="form js-form" id="anfrage" action="../../anfrage.php" method="post" novalidate>
+  <h2 style="font-size:1.5rem">Chcete se nejdřív zeptat?</h2>
+  <p style="margin:0;color:var(--ink-soft)">Pro skupiny, více apartmánů najednou, selskou světnici nebo oslavu nám jednoduše napište. Ozveme se během několika hodin.</p>
+  <input type="hidden" name="welt" value="Almromantik">
+  <fieldset class="field wahl"><legend>Na co se chcete zeptat?</legend><label class="check"><input type="checkbox" name="wohnung[]" value="Löckersee"><span>Apartmán Löckersee</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almheu"><span>Apartmán Almheu</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Hehnanest"><span>Apartmán Hehnanest</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Bauernstube"><span>Selská světnice, 80 € za pobyt</span></label><label class="check"><input type="checkbox" name="wohnung[]" value="Almhütte"><span>Horská chata</span></label></fieldset>
+  <div class="row2">
+    <div class="field"><label for="f-vn">Jméno</label><input id="f-vn" name="vorname" autocomplete="given-name" required><span class="err"></span></div>
+    <div class="field"><label for="f-nn">Příjmení</label><input id="f-nn" name="nachname" autocomplete="family-name" required><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-mail">E-mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required><span class="err"></span></div>
+    <div class="field"><label for="f-tel">Telefon <small>(nepovinné)</small></label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"><span class="err"></span></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-erw">Dospělí</label><select id="f-erw" name="erwachsene" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+    <div class="field"><label for="f-kin">Děti</label><select id="f-kin" name="kinder" required><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option></select></div>
+  </div>
+  <div class="row2">
+    <div class="field"><label for="f-an">Příjezd</label><input id="f-an" name="anreise" type="date" required><span class="err"></span></div>
+    <div class="field"><label for="f-ab">Odjezd</label><input id="f-ab" name="abreise" type="date" required><span class="err"></span></div>
+  </div>
+  <div class="field"><label for="f-wunsch">Vaše zpráva <small>(nepovinné)</small></label><textarea id="f-wunsch" name="wuensche"></textarea></div>
+  <div class="hp" aria-hidden="true"><label for="f-web">Nechte prosím prázdné</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+  <label class="check"><input type="checkbox" name="datenschutz" value="ja" required><span>Přečetl/a jsem si <a href="../datenschutz/">Zásady ochrany osobních údajů</a> a souhlasím s tím, že mé údaje použijete k zodpovězení poptávky.</span></label>
+  <span class="err js-dserr"></span>
+  <button class="btn btn-book" type="submit">Odeslat poptávku</button>
+  <div class="form-msg" role="status" hidden></div>
+</form></section>
   <div style="padding-bottom:70px;max-width:720px">
-    <div class="contact-card" id="kontakt"><h2 class="as-h3">Kontakt a poloha</h2><p>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau<br>Poloha farmy: Janslweg 22</p><p>Tel. +43 664 11 44 926<br>info@almromantik.at</p>
+    <div class="contact-card" id="kontakt"><h2 class="as-h3">Kontakt a poloha</h2><p>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau<br>Poloha farmy: Janslweg 22</p><p>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <h2 class="as-h3">Příjezd</h2><p>Vlakem do stanice Steeg-Gosau, dále autobusem 541 nebo 542 na zastávku Gosau Sommerhof a odtud 10 minut pěšky. Ze směru Abtenau autobusem 470 na zastávku Gosau Abzweigung Pass Gschütt a přestup směr Gosausee. Jízdní řády na oebb.at a postbus.at.</p></div>
   </div>
 </div></main>
@@ -61,7 +91,7 @@
   <div class="wrap">
     <div>
       <h2 class="fh">Almromantik</h2>
-      <p>Dovolená na farmě Schmiedsipplhof a horská chata<br>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau, Rakousko<br>Farma: Janslweg 22, 4824 Gosau<br>Tel. +43 664 11 44 926<br>info@almromantik.at</p>
+      <p>Dovolená na farmě Schmiedsipplhof a horská chata<br>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau, Rakousko<br>Farma: Janslweg 22, 4824 Gosau<br>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <a class="sister" href="https://www.apartments-salzkammergut.at/cs/" target="_blank" rel="noopener">Moderně a bezkontaktně? → apartments-salzkammergut.at</a>
     </div>
     <div><h2 class="fh">Ubytování</h2><p><a href="../schmiedsipplhof/">Schmiedsipplhof</a><br><a href="../schmiedsipplhof/ferienwohnung-loeckersee/">Apartmán Löckersee</a><br><a href="../schmiedsipplhof/ferienwohnung-almheu/">Apartmán Almheu</a><br><a href="../schmiedsipplhof/ferienwohnung-hehnanest/">Apartmán Hehnanest</a><br><a href="../huettenurlaub/">Horská chata</a></p></div>

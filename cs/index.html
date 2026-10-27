@@ -23,6 +23,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <meta name="theme-color" content="#4d6b36">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Která forma dovolené je pro mě?", "acceptedAnswer": {"@type": "Answer", "text": "Statek Schmiedsipplhof je pro rodiny a skupiny, které chtějí být uprostřed života na statku: tři apartmány se zvířaty, saunou z limby a výhledem na Gosaukamm. Horská chata na Schmiedsipplalm je pro všechny, kdo si chtějí opravdu odpočinout: chata na samotě v 1 300 m s kamny na dřevo a grilem."}}, {"@type": "Question", "name": "Kde se nacházejí vaše ubytování?", "acceptedAnswer": {"@type": "Answer", "text": "Obě v Gosau am Dachstein, uprostřed regionu světového dědictví Salzkammergut. Statek Schmiedsipplhof leží v ulici Janslweg 22, 10 minut chůze od zastávky Gosau Sommerhof. K horské chatě pojedete po předání klíče u nás na Austraße 22 asi 20 minut vlastním autem."}}, {"@type": "Question", "name": "Jak daleko jsou výletní cíle?", "acceptedAnswer": {"@type": "Answer", "text": "Ke Gosausee asi 10 minut autem, do Hallstattu asi 20, na Dachstein Krippenstein asi 30 a do Bad Ischlu asi 35 minut. K lanovce Hornspitz ve skiareálu Dachstein West dojdete ze statku za 7 až 10 minut. Do Hallstattu a ke Gosausee se vyplatí autobus, parkování je tam omezené a placené."}}, {"@type": "Question", "name": "Jak nejlépe rezervovat?", "acceptedAnswer": {"@type": "Answer", "text": "Přímo u nás za nejlepší cenu: online přes „Rezervovat“, poptávkovým formulářem, e-mailem na info@almromantik.at nebo telefonicky na +43 664 11 44 926."}}, {"@type": "Question", "name": "Existuje karta pro hosty?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Od 3 nocí dostanete SalzkammergutCard zdarma, se slevou až 25 % na lanovky, jeskyně, lodní dopravu, muzea a další. Podklady jsou k dispozici u nás na statku."}}]}</script>
 </head>
 <body>
 <div class="draft-note">Testovací verze · čeština</div>
@@ -32,10 +33,10 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 33 L15 12 L20 19 L25 9 L37 33 Z" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/><path d="M21.6 15.5 L25 9 L28.6 16" fill="none" stroke="var(--pink)" stroke-width="2.4" stroke-linejoin="round"/></svg>
       <span>Almromantik</span>
     </a>
-    <nav class="nav" aria-label="Hlavní navigace">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptmenu" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav id="hauptmenu" class="nav" aria-label="Hlavní navigace">
       <a href="schmiedsipplhof/">Schmiedsipplhof</a>
       <a href="huettenurlaub/">Horská chata</a>
-      <a href="https://www.apartments-salzkammergut.at/cs/" target="_blank" rel="noopener">Apartmány</a>
       <a href="urlaub-salzkammergut/">Dovolená v Solné komoře</a>
       <a href="ueber-uns/">O nás</a>
     </nav>
@@ -50,7 +51,7 @@
     <div class="wrap"><div class="hero-card">
       <div class="logo-tile"><img srcset="../img/almromantik-logo-480w.webp 480w, ../img/almromantik-logo-800w.webp 800w, ../img/almromantik-logo.webp 900w" sizes="240px" src="../img/almromantik-logo.webp" alt="Logo Schmiedsipplhof a horská chata, almromantik.at" width="1400" height="933"></div>
       <p class="eyebrow">Gosau am Dachstein · Solná komora</p>
-      <h1>Život na farmě a kouzlo chaty <span class="script">v Gosau</span></h1>
+      <h1>Dovolená na statku a na horské pastvině <span class="script">v Gosau</span></h1>
       <p class="lead">Život na farmě s osly a saunou z limbového dřeva, nebo horská chata jen pro vás ve výšce 1 300 m – dovolená na statku nebo na horské pastvině. Jedinečné, udržitelné, opravdové.</p>
       <div class="cta-row"><a class="btn btn-book js-book" href="buchen/">Rezervovat</a><a class="btn btn-ghost" href="#welten">Objevte naše světy dovolené</a></div>
     </div></div>
@@ -99,20 +100,22 @@
     <p><a class="btn btn-book" href="urlaub-salzkammergut/">Výlety a túry</a></p>
   </div></section>
 
+  <section style="padding-top:0"><div class="wrap"><div class="sec-head"><h2>Časté otázky</h2></div><div class="faq"><details><summary>Která forma dovolené je pro mě?</summary><p>Statek Schmiedsipplhof je pro rodiny a skupiny, které chtějí být uprostřed života na statku: tři apartmány se zvířaty, saunou z limby a výhledem na Gosaukamm. Horská chata na Schmiedsipplalm je pro všechny, kdo si chtějí opravdu odpočinout: chata na samotě v 1 300 m s kamny na dřevo a grilem.</p></details><details><summary>Kde se nacházejí vaše ubytování?</summary><p>Obě v Gosau am Dachstein, uprostřed regionu světového dědictví Salzkammergut. Statek Schmiedsipplhof leží v ulici Janslweg 22, 10 minut chůze od zastávky Gosau Sommerhof. K horské chatě pojedete po předání klíče u nás na Austraße 22 asi 20 minut vlastním autem.</p></details><details><summary>Jak daleko jsou výletní cíle?</summary><p>Ke Gosausee asi 10 minut autem, do Hallstattu asi 20, na Dachstein Krippenstein asi 30 a do Bad Ischlu asi 35 minut. K lanovce Hornspitz ve skiareálu Dachstein West dojdete ze statku za 7 až 10 minut. Do Hallstattu a ke Gosausee se vyplatí autobus, parkování je tam omezené a placené.</p></details><details><summary>Jak nejlépe rezervovat?</summary><p>Přímo u nás za nejlepší cenu: online přes „Rezervovat“, poptávkovým formulářem, e-mailem na <a href="mailto:info@almromantik.at">info@almromantik.at</a> nebo telefonicky na <a href="tel:+436641144926">+43 664 11 44 926</a>.</p></details><details><summary>Existuje karta pro hosty?</summary><p>Ano. Od 3 nocí dostanete SalzkammergutCard zdarma, se slevou až 25 % na lanovky, jeskyně, lodní dopravu, muzea a další. Podklady jsou k dispozici u nás na statku.</p></details></div></div></section>
+
   <section><div class="wrap contact-grid">
     <div class="contact-card book-box"><h2 style="font-size:1.5rem">Rezervace online</h2>
   <p>Volné termíny, výpočet ceny a okamžitá závazná rezervace. Bez poptávky, bez čekání.</p>
   <p><a class="btn btn-book js-book" href="buchen/">Rezervovat online</a></p>
   <p class="js-book-pending note" style="font-size:.92rem">Online rezervaci právě zprovozňujeme. Do té doby rezervujte telefonicky nebo e-mailem.</p>
-  <p>Dotazy? Tel. +43 664 11 44 926<br>info@almromantik.at</p></div>
-    <div class="contact-card"><img srcset="../img/hof/heike-martin-vermieter-selfie-480w.webp 480w, ../img/hof/heike-martin-vermieter-selfie-800w.webp 800w, ../img/hof/heike-martin-vermieter-selfie.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 600px" src="../img/hof/heike-martin-vermieter-selfie.webp" alt="Heike a Martin Schwaighoferovi" width="1200" height="900" loading="lazy" style="border-radius:12px;margin-bottom:14px;width:100%;height:auto"><h3>Heike a Martin Schwaighoferovi</h3><p>Máte před rezervací dotaz? Zavolejte nebo napište.</p><p>Tel. +43 664 11 44 926<br>info@almromantik.at</p><p>Janslweg 22, 4824 Gosau</p></div>
+  <p>Dotazy? Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p></div>
+    <div class="contact-card"><img srcset="../img/hof/heike-martin-vermieter-selfie-480w.webp 480w, ../img/hof/heike-martin-vermieter-selfie-800w.webp 800w, ../img/hof/heike-martin-vermieter-selfie.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 600px" src="../img/hof/heike-martin-vermieter-selfie.webp" alt="Heike a Martin Schwaighoferovi" width="1200" height="900" loading="lazy" style="border-radius:12px;margin-bottom:14px;width:100%;height:auto"><h3>Heike a Martin Schwaighoferovi</h3><p>Máte před rezervací dotaz? Zavolejte nebo napište.</p><p>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p><p>Janslweg 22, 4824 Gosau</p></div>
   </div></section>
 </main>
 <footer class="site">
   <div class="wrap">
     <div>
       <h2 class="fh">Almromantik</h2>
-      <p>Dovolená na farmě Schmiedsipplhof a horská chata<br>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau, Rakousko<br>Farma: Janslweg 22, 4824 Gosau<br>Tel. +43 664 11 44 926<br>info@almromantik.at</p>
+      <p>Dovolená na farmě Schmiedsipplhof a horská chata<br>Heike a Martin Schwaighoferovi<br>Austraße 22, 4825 Gosau, Rakousko<br>Farma: Janslweg 22, 4824 Gosau<br>Tel. <a href="tel:+436641144926">+43 664 11 44 926</a><br><a href="mailto:info@almromantik.at">info@almromantik.at</a></p>
       <a class="sister" href="https://www.apartments-salzkammergut.at/cs/" target="_blank" rel="noopener">Moderně a bezkontaktně? → apartments-salzkammergut.at</a>
     </div>
     <div><h2 class="fh">Ubytování</h2><p><a href="schmiedsipplhof/">Schmiedsipplhof</a><br><a href="schmiedsipplhof/ferienwohnung-loeckersee/">Apartmán Löckersee</a><br><a href="schmiedsipplhof/ferienwohnung-almheu/">Apartmán Almheu</a><br><a href="schmiedsipplhof/ferienwohnung-hehnanest/">Apartmán Hehnanest</a><br><a href="huettenurlaub/">Horská chata</a></p></div>
