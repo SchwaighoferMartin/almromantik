@@ -427,3 +427,5 @@ section.lake-box{padding:clamp(22px,3vw,34px)!important;margin-block:8px}
 .near{list-style:none;padding:0;margin:6px 0 4px;display:grid;gap:12px}.near li{display:grid;gap:2px}.near a{color:#a9cc84}.near span{color:color-mix(in srgb,var(--on-stone) 82%,transparent);font-size:.95rem}
 .host-box img{aspect-ratio:4/5;object-position:50% 25%}
 .bed-photo{margin:14px 0 0;border-radius:12px;overflow:hidden}.bed-photo img{width:100%;height:auto!important;aspect-ratio:3/2;object-fit:cover}
+.sauna-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:700px){.sauna-grid{grid-template-columns:repeat(2,1fr)}.sauna-grid .wide{grid-column:span 2}}
