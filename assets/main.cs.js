@@ -53,12 +53,18 @@ if (data) {
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
 })();
 
-// ---- Buchungslink: HIER den Link der Buchungsmaschine eintragen. Leer = Buttons führen zur Seite /buchen/ ----
-const BOOKING_URL = "https://atuab4-07-06-02.officialbookings.com/";  // Seekda (Urlaub am Bauernhof), Stand 27.10.2026
-if (BOOKING_URL) {
-  document.querySelectorAll(".js-book").forEach(a => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; });
-  document.querySelectorAll(".js-book-pending").forEach(e => e.hidden = true);
-} else document.querySelectorAll('.js-book[href="#"]').forEach(a => a.href = "#kontakt");
+// ---- Buchungslinks: HIER eintragen. Leer = Buttons führen zur Anfrage bzw. Seite /buchen/ ----
+const BOOKING_URL = "https://atuab4-07-06-02.officialbookings.com/";  // Schmiedsipplhof über Seekda (Urlaub am Bauernhof), Stand 27.10.2026
+const HUETTE_URL = "";  // Almhütte: Link der neuen Plattform folgt
+const IS_HUT = document.body.classList.contains("huette");
+document.querySelectorAll(".js-book").forEach(a => {
+  const hut = IS_HUT || a.classList.contains("js-hut");
+  const url = hut ? HUETTE_URL : BOOKING_URL;
+  if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  else if (hut && IS_HUT) a.href = "#anfrage";
+  else if (a.getAttribute("href") === "#") a.href = "#kontakt";
+});
+document.querySelectorAll(".js-book-pending").forEach(e => { e.hidden = !!(IS_HUT ? HUETTE_URL : BOOKING_URL); });
 
 // ---- Reiter Tiere ----
 document.querySelectorAll('.tier-tabs').forEach(list => {

@@ -429,3 +429,9 @@ section.lake-box{padding:clamp(22px,3vw,34px)!important;margin-block:8px}
 .bed-photo{margin:14px 0 0;border-radius:12px;overflow:hidden}.bed-photo img{width:100%;height:auto!important;aspect-ratio:3/2;object-fit:cover}
 .sauna-grid{grid-template-columns:repeat(3,1fr)}
 @media (max-width:700px){.sauna-grid{grid-template-columns:repeat(2,1fr)}.sauna-grid .wide{grid-column:span 2}}
+img.stamp{float:right;width:clamp(96px,14vw,150px)!important;height:auto!important;margin:0 0 10px 18px;transform:rotate(-8deg)}
+.has-stamp::after{content:"";display:block;clear:both}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) img.stamp{filter:invert(1)}}
+:root[data-theme="dark"] img.stamp{filter:invert(1)}
+.sec-head.has-stamp{position:relative;padding-right:clamp(110px,16vw,180px)}
+.sec-head.has-stamp img.stamp{position:absolute;right:0;top:0;float:none;margin:0}
