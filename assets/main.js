@@ -55,7 +55,7 @@ if (data) {
 
 // ---- Buchungslinks: HIER eintragen. Leer = Buttons führen zur Anfrage bzw. Seite /buchen/ ----
 const BOOKING_URL = "https://atuab4-07-06-02.officialbookings.com/";  // Schmiedsipplhof über Seekda (Urlaub am Bauernhof), Stand 27.10.2026
-const HUETTE_URL = "";  // Almhütte: Link der neuen Plattform folgt
+const HUETTE_URL = "https://www.almliesl.com/de/huetten-haeuser/unterkuenfte/AT2/527ab95f-6945-4873-acb3-c0a31ab68270/almliesl-gosa-780";  // Almhütte über Almliesl, Stand 10.11.2026
 const IS_HUT = document.body.classList.contains("huette");
 document.querySelectorAll(".js-book").forEach(a => {
   const hut = IS_HUT || a.classList.contains("js-hut");
