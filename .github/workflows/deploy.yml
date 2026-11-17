@@ -28,6 +28,15 @@ jobs:
       - uses: actions/checkout@v4
         if: steps.check.outputs.ok == 'true'
 
+      - name: Testseiten-Hinweise für die echte Homepage entfernen
+        if: steps.check.outputs.ok == 'true'
+        run: |
+          find . -name '*.html' -not -path './.git/*' -print0 | xargs -0 sed -i -E \
+            -e 's#<meta name="robots" content="noindex, nofollow">##g' \
+            -e 's#<div class="draft-note">[^<]*</div>##g'
+          if [ -f robots.txt ]; then sed -i -E 's#^Disallow: /$#Disallow:#' robots.txt; fi
+          echo "Rest-Treffer:"; grep -rl 'noindex\|draft-note">' --include=*.html . || true
+
       - name: Per FTP hochladen
         if: steps.check.outputs.ok == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
