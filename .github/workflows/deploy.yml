@@ -37,18 +37,24 @@ jobs:
           if [ -f robots.txt ]; then sed -i -E 's#^Disallow: /$#Disallow:#' robots.txt; fi
           echo "Rest-Treffer:"; grep -rl 'noindex\|draft-note">' --include=*.html . || true
 
-      - name: Per FTP hochladen
+      - name: Per FTPS hochladen (lftp)
         if: steps.check.outputs.ok == 'true'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIR }}
-          protocol: ftp
-          exclude: |
-            **/.git*
-            **/.git*/**
-            .github/**
-            social/**
-            README.md
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y lftp >/dev/null
+          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" "$FTP_SERVER" <<EOF
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate no
+          set net:max-retries 3
+          set net:timeout 30
+          mirror -R --parallel=4 --verbose=1 \
+            --exclude-glob .git* --exclude-glob .git/ --exclude-glob .github/ \
+            --exclude-glob social/ --exclude-glob README.md \
+            ./ ${FTP_DIR:-./}
+          bye
+          EOF
