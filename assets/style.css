@@ -469,3 +469,4 @@ img.zoomable{cursor:zoom-in}
 .game-list label{display:flex;gap:10px;align-items:center;cursor:pointer;font-size:1.02rem;min-height:44px}
 .game-list input{flex:none;width:24px;height:24px;accent-color:var(--pink)}
 .game-done{font-weight:700;color:var(--pink-ink);font-size:1.1rem}
+footer.site .social-links a{font-weight:600}

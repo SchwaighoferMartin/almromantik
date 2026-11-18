@@ -34,7 +34,7 @@ jobs:
           find . -name '*.html' -not -path './.git/*' -print0 | xargs -0 sed -i -E \
             -e 's#<meta name="robots" content="noindex, nofollow">##g' \
             -e 's#<div class="draft-note">[^<]*</div>##g'
-          if [ -f robots.txt ]; then sed -i -E 's#^Disallow: /$#Disallow:#' robots.txt; fi
+          printf 'User-agent: *\nAllow: /\n\nSitemap: https://www.almromantik.at/sitemap.xml\n' > robots.txt
           echo "Rest-Treffer:"; grep -rl 'noindex\|draft-note">' --include=*.html . || true
 
       - name: Per FTPS hochladen (lftp)
